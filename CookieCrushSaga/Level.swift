@@ -20,7 +20,7 @@ class Level {
 func cookieAtColumn(column: Int, row: Int) -> Cookie? {
     assert(column >= 0 && column < NumColumns)
     assert(row >= 0 && row < NumRows)
-    return CookieType[column, row]
+    return cookie[column, row]
 }
 func shuffle() -> Set<Cookie> {
     return createInitialCookies()
@@ -38,7 +38,7 @@ func createInitialCookies() -> Set<Cookie> {
             
             // 3
             let cookie = Cookie(column: column, row: row, cookieType: cookieType)
-            Cookie()[column, row] = cookie
+            cookie[column, row] = cookie
             
             // 4
             set.addElement(cookie)
